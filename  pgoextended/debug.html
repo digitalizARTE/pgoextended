@@ -1,0 +1,509 @@
+			<script language="JavaScript">
+			/* code modified from ColdFusion's cfdump code */
+				function dBug_toggleRow(source) {
+					var target = (document.all) ? source.parentElement.cells[1] : source.parentNode.lastChild;
+					dBug_toggleTarget(target,dBug_toggleSource(source));
+				}
+				
+				function dBug_toggleSource(source) {
+					if (source.style.fontStyle=='italic') {
+						source.style.fontStyle='normal';
+						source.title='click to collapse';
+						return 'open';
+					} else {
+						source.style.fontStyle='italic';
+						source.title='click to expand';
+						return 'closed';
+					}
+				}
+			
+				function dBug_toggleTarget(target,switchToState) {
+					target.style.display = (switchToState=='open') ? '' : 'none';
+				}
+			
+				function dBug_toggleTable(source) {
+					var switchToState=dBug_toggleSource(source);
+					if(document.all) {
+						var table=source.parentElement.parentElement;
+						for(var i=1;i<table.rows.length;i++) {
+							target=table.rows[i];
+							dBug_toggleTarget(target,switchToState);
+						}
+					}
+					else {
+						var table=source.parentNode.parentNode;
+						for (var i=1;i<table.childNodes.length;i++) {
+							target=table.childNodes[i];
+							if(target.style) {
+								dBug_toggleTarget(target,switchToState);
+							}
+						}
+					}
+				}
+			</script>
+			
+			<style type="text/css">
+				table.dBug_array,table.dBug_object,table.dBug_resource,table.dBug_resourceC,table.dBug_xml {
+					font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px;
+				}
+				
+				.dBug_arrayHeader,
+				.dBug_objectHeader,
+				.dBug_resourceHeader,
+				.dBug_resourceCHeader,
+				.dBug_xmlHeader 
+					{ font-weight:bold; color:#FFFFFF; cursor:pointer; }
+				
+				.dBug_arrayKey,
+				.dBug_objectKey,
+				.dBug_xmlKey 
+					{ cursor:pointer; }
+					
+				/* array */
+				table.dBug_array { background-color:#006600; }
+				table.dBug_array td { background-color:#FFFFFF; }
+				table.dBug_array td.dBug_arrayHeader { background-color:#009900; }
+				table.dBug_array td.dBug_arrayKey { background-color:#CCFFCC; }
+				
+				/* object */
+				table.dBug_object { background-color:#0000CC; }
+				table.dBug_object td { background-color:#FFFFFF; }
+				table.dBug_object td.dBug_objectHeader { background-color:#4444CC; }
+				table.dBug_object td.dBug_objectKey { background-color:#CCDDFF; }
+				
+				/* resource */
+				table.dBug_resourceC { background-color:#884488; }
+				table.dBug_resourceC td { background-color:#FFFFFF; }
+				table.dBug_resourceC td.dBug_resourceCHeader { background-color:#AA66AA; }
+				table.dBug_resourceC td.dBug_resourceCKey { background-color:#FFDDFF; }
+				
+				/* resource */
+				table.dBug_resource { background-color:#884488; }
+				table.dBug_resource td { background-color:#FFFFFF; }
+				table.dBug_resource td.dBug_resourceHeader { background-color:#AA66AA; }
+				table.dBug_resource td.dBug_resourceKey { background-color:#FFDDFF; }
+				
+				/* xml */
+				table.dBug_xml { background-color:#888888; }
+				table.dBug_xml td { background-color:#FFFFFF; }
+				table.dBug_xml td.dBug_xmlHeader { background-color:#AAAAAA; }
+				table.dBug_xml td.dBug_xmlKey { background-color:#DDDDDD; }
+			</style><table cellspacing=2 cellpadding=3 class="dBug_object">
+				<tr>
+					<td style="font-style:italic" class="dBug_objectHeader" colspan=2 onClick='dBug_toggleTable(this)'>$this, null, true, false  (object)</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">string</td>
+				<td><?php
+</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">sql</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">objectName</td>
+				<td>Autor</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">attributeList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>Nombre</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>Apellido</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>Libro</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>Nacionalidad</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>Notas</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>Usuario</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>Terminal</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>TS</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>IsBool</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">typeList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>VARCHAR(50)</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>VARCHAR(50)</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>JOIN</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>VARCHAR(50)</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>LONGTEXT</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>BELONGSTO</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>VARCHAR(100)</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>DATETIME</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>TINYINT</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">getterList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>true</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">setterList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>true</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">encryptList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>false</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">insertList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>true</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">updateList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>true</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>true</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">defaultListPHP</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>[empty string]</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">defaultListDB</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>now()</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>1</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">booleanList</td>
+				<td><table cellspacing=2 cellpadding=3 class="dBug_array">
+				<tr>
+					<td style="font-style:italic" class="dBug_arrayHeader" colspan=2 onClick='dBug_toggleTable(this)'>array</td>
+				</tr><tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">0</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">1</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">2</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">3</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">4</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">5</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">6</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">7</td>
+				<td>false</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_arrayKey">8</td>
+				<td>true</td></tr>
+</table></td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">separator</td>
+				<td>[empty string]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">pdoDriver</td>
+				<td>mysql</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">language</td>
+				<td>php5.1</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">Object</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">BeginObject</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">EndObject</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateConstructor</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSQLQuery</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateComments</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreatePreface</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateMagicGetterFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSaveFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSaveNewFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateDeleteFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateDeleteListFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateGetFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateGetListFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateAddChildFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateGetChildrenFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSetChildrenFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSetParentFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateGetParentFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateAddAssociationFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateGetAssociationsFunction</td>
+				<td>[function]</td></tr>
+<tr style="display:none">
+				<td valign="top" onClick='dBug_toggleRow(this)' class="dBug_objectKey">CreateSetAssociationsFunction</td>
+				<td>[function]</td></tr>
+</table>

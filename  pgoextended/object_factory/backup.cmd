@@ -1,0 +1,1 @@
+@rar a  -x@exclude.lst -dh -k -m5 -o- -r -pdigitalizarte.com -ri0:10  -rv3 -s -rr3% -tk -v8192k -ag+YYYYMMDD-NN backup\_pog @backup.lst

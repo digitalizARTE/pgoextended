@@ -1,0 +1,124 @@
+* {
+	font-family:Verdana;
+	font-size: 10px;
+}
+
+.cssform {
+	text-align:left;
+}
+
+.cssform p {
+	width: 400px;
+	clear: left;
+	margin: 0;
+	padding: 5px 0 8px 0;
+	/* padding-left: 100px; */
+	border-top: 1px dashed gray;
+	height: 1%;
+}
+
+.cssform label {
+	font-weight: bold;
+	float: left;
+	margin-left: 0;
+	width: 150px; /*width of labels. Should be smaller than left column (100px) to create some right margin*/
+}
+
+.cssform input, .cssform select, .cssform textarea {
+	margin-left: 100px;
+}
+.cssform input[type="text"] { /*width of text boxes. IE6 does not understand this attribute*/
+	width: 230px;
+}
+
+.cssform textarea {
+	width: 400px;
+	height: 150px;
+	margin-left: 0;
+}
+
+.cssform fieldset {
+	width: 455px;
+}
+
+/*.threepxfix class below:
+Targets IE6- ONLY. Adds 3 pixel indent for multi-line form contents.
+to account for 3 pixel bug: http://www.positioniseverything.net/explorer/threepxtest.html
+*/
+
+* html .threepxfix {
+	margin-left: 3px;
+}
+
+/*.threepxfix class below:
+Targets IE6- ONLY. Adds 3 pixel indent for multi-line form contents.
+to account for 3 pixel bug: http://www.positioniseverything.net/explorer/threepxtest.html
+*/
+* html .threepxfix {
+	margin-left: 3px;
+}
+
+div#buscador {
+	margin-left: 2px;
+	float:left;
+	position: absolute;
+	left: 479px;
+	top: 11px;
+} 
+
+div#listado {
+	margin-left: 2px;
+	float:left;
+} 
+
+
+div#contenido {
+	float:left;
+}
+
+.selecionado {
+	padding:2px;
+	border-color:#ebebeb;
+	border:1px;
+	color: #999999;
+}
+
+.pc_checkbox, .pc_radiobutton {
+   background-position: 3px center;
+   background-repeat:   no-repeat;
+   border:              1px solid #fff;
+   padding-left:        24px;
+}
+.pc_check_unchecked {
+   background-image:    url(images/check_off.gif);
+}
+.pc_check_checked {
+   background-image:    url(images/check_on.gif);
+}
+.pc_radio_unchecked {
+   background-image:    url(images/radio_off.gif);
+}
+.pc_radio_checked {
+   background-image:    url(images/radio_on.gif);
+}
+.pc_check_checked_disabled {
+   background-image:    url(images/check_off_disabled.gif);
+}
+.pc_check_unchecked_disabled {
+   background-image:    url(images/check_on_disabled.gif);
+}
+.pc_radio_checked_disabled {
+   background-image:    url(images/radio_off_disabled.gif);
+}
+.pc_radio_unchecked_disabled {
+   background-image:    url(images/radio_on_disabled.gif);
+}
+.pc_focus {
+   background-color:    #ffa;
+   border:              1px dotted #000;
+}
+
+#filters th 
+{
+	text-align:left;
+}
