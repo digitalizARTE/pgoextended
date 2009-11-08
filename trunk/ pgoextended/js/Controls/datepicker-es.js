@@ -1,0 +1,2 @@
+Control.DatePicker.Locale['es_ES'] = { dateTimeFormat: 'dd/MM/yyyy HH:mm:ss', dateFormat: 'dd/MM/yyyy', firstWeekDay: 1, weekend: [0,6], language: 'es'};
+Control.DatePicker.Language['es'] = { months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Augosto', 'Septiembre', 'Octubre', 'Novimbre', 'Diciembre'], days: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], strings: { 'Now': 'Ahora', 'Today': 'Hoy', 'Time': 'Hora', 'Exact minutes': 'Minuto exacto', 'Select Date and Time': 'Selecciona Dia y Hora', 'Open calendar': 'Abre calendario' } };
